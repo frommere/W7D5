@@ -16,7 +16,7 @@ class SubsController < ApplicationController
         if @sub && current_user.id == @sub.moderator_id
             render :edit
         else
-            flash[:errors] = @sub.errors.full_messages
+            flash[:errors] = ["This is not your sub"]
             redirect_to subs_url
         end
     end
